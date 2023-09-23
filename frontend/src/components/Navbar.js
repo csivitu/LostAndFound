@@ -6,6 +6,13 @@ export default function Navbar() {
       <div className="h1 text-center">Lost & Found</div>
       <nav class="navbar navbar-light bg-white shadow-sm">
         <div class="container">
+          <div class="d-flex justify-content-center align-items-center">
+          <a class="p-2" href="./"><img
+            src="images/home.svg"
+            width="40px"
+            height="40px"
+          />
+          </a>
           <a class="navbar-brand" href="#">
             <img
               src="images/user.png"
@@ -16,7 +23,7 @@ export default function Navbar() {
             />
             <text>Name</text>
           </a>
-
+          </div>
           <div class="d-flex">
             <Link to="/upload">
               <button class="btn btn-secondary me-2">Add Items</button>
