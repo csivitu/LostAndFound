@@ -1,32 +1,35 @@
+// Navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
-    <>
-      <div className="h1 text-center">Lost & Found</div>
-      <nav class="navbar navbar-light bg-white shadow-sm">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img
-              src="images/user.png"
-              class="img-fluid rounded-circle"
-              alt=""
-              width="40px"
-              height="4px"
-            />
-            <text>Name</text>
-          </a>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <img
+            src="images/user.png"
+            className="img-fluid rounded-circle me-2"
+            alt=""
+            width="40px"
+            height="40px"
+          />
+          <span className="align-middle">Name</span>
+        </Link>
 
-          <div class="d-flex">
-            <Link to="/upload">
-              <button class="btn btn-secondary me-2">Add Items</button>
-            </Link>
-            <Link to="/user_validation">
-              <button class="btn btn-secondary">LogIn</button>
-            </Link>
-          </div>
+        <div className="d-flex">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <Link className="nav-link" to="/upload">
+                Add Items
+              </Link>
+            </li>
+          </ul>
+          <Link to="/user_validation">
+            <button className="btn btn-secondary">Log In</button>
+          </Link>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
