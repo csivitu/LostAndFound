@@ -17,6 +17,7 @@ export default function Dashboard() {
       padding-top: 75%; /* 4:3 Aspect Ratio (You can adjust this value) */
     }
 
+    
     .image-container img {
       position: absolute;
       top: 0;
