@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 export default function Navbar() {
+  const isLoggedIn = localStorage.getItem("token") !== null;
   return (
     <>
       <div className="h1 text-center">Lost & Found</div>
@@ -28,9 +29,11 @@ export default function Navbar() {
             <Link to="/upload">
               <button class="btn btn-secondary me-2">Add Items</button>
             </Link>
-            <Link to="/user_validation">
-              <button class="btn btn-secondary">LogIn</button>
-            </Link>
+            {!isLoggedIn && (
+              <Link to="/user_validation">
+                <button class="btn btn-secondary">LogIn</button>
+              </Link>
+            )}
           </div>
         </div>
       </nav>
