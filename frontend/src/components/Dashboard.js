@@ -41,10 +41,10 @@ export default function Dashboard() {
               <div className={`col-sm-4`}>
                 <div className="card shadow my-2 p-3">
                   <img
-                    className="card-img-top img-thumbnail"
+                    className="card-img-top img-thumbnail img-fluid"
                     src={`images/${user.id}.jpg`}
                     alt="Image"
-                    style={{ width: "100%", height: "20rem" }}
+                    
                   />
                   <div className="card-body">
                     <h5 className="card-title">{user.name}</h5>
