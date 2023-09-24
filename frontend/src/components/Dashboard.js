@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -8,60 +8,50 @@ export default function Dashboard() {
     { id: 2, name: "Victor Wayne" },
     { id: 3, name: "Jane Doe" },
   ];
+
   return (
     <>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body className="bg-light">
+      <div className="container">
         <Navbar />
-        <br />
-        <br />
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-11">
-              <div className="form-group my-2">
-                <input
-                  className="form-control"
-                  name="email"
-                  placeholder="Search for Anything..."
-                />
-              </div>
-            </div>
-            <div className="col-sm-1">
-              <div className="text-center my-2">
-                <button className="btn btn-secondary shadow">Search</button>
-              </div>
+        <div className="row">
+          <div className="col-md-8">
+            <div className="form-group my-2">
+              <input
+                className="form-control"
+                name="email"
+                placeholder="Search for Anything..."
+              />
             </div>
           </div>
-          <br />
-          <br />
-          <div className="row">
-            {data.map((user) => (
-              <div className={`col-sm-4`}>
-                <div className="card shadow my-2 p-3">
-                  <img
-                    className="card-img-top img-thumbnail"
-                    src={`images/${user.id}.jpg`}
-                    alt="Image"
-                    style={{ width: "100%", height: "20rem" }}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{user.name}</h5>
-                    <p className="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    {/*<span className="btn btn-secondary">Go somewhere</span>*/}
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="col-md-4">
+            <div className="text-center my-2">
+              <button className="btn btn-secondary shadow">Search</button>
+            </div>
           </div>
         </div>
-        <br />
-        <Footer />
-      </body>
+
+        <div className="row">
+          {data.map((user) => (
+            <div className="col-md-4" key={user.id}>
+              <div className="card shadow my-2 custom-card">
+                <img
+                  className="card-img-top img-thumbnail img-fluid custom-img"
+                  src={`images/${user.id}.jpg`}
+                  alt="Image"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{user.name}</h5>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }
